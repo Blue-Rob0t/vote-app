@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -98,20 +98,90 @@ exports.$$ = $$;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(1);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var pollForm = document.querySelector('.poll-form');
+var button = document.querySelector('.poll-button');
+
+function addElemenet(parent, element, elementID, html) {
+    var p = document.querySelector(parent);
+    var e = document.createElement(element);
+    e.setAttribute('id', elementID);
+    e.innerHTML = html;
+    p.appendChild(e);
+
+    console.log(html);
+}
+
+//event delegationt to allow dynamic elements created after page load to be removed
+function removeElement(event) {
+    if (event.target.className === 'remove') {
+        event.target.parentElement.remove();
+    }
+}
+
+var numberID = 0;
+
+function addInput() {
+    if (window.location.pathname !== '/poll' && window.location.pathname !== '/poll/') {
+        return;
+    }
+
+    numberID++;
+    console.log(numberID);
+
+    var adder = function adder() {
+        var html = '<div class="contain"><input type="text" name="options" /> <a href=# class="remove"> remove </a> </div>';
+
+        addElemenet('.form', 'p', 'input-' + numberID, html);
+    };
+
+    pollForm.addEventListener('click', removeElement, false);
+
+    button.addEventListener('click', adder, false);
+}
+
+exports.default = addInput;
+
+/**
+ * FIXME:
+ *  
+ *  make ID for dynamic input elements different
+ */
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(2);
 
 var _bling = __webpack_require__(0);
+
+var _input = __webpack_require__(1);
+
+var _input2 = _interopRequireDefault(_input);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//run modueles
+(0, _input2.default)();
+
+//import moduels
 
 /***/ })
 /******/ ]);

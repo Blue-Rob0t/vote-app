@@ -1,10 +1,12 @@
 doctype html
 html
   head
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js')
     title= `${title} | ${h.siteName}`
     link(rel='stylesheet', href='/dist/style.css')
     link(rel="shortcut icon" type="image/png" href="/images/icons/doughnut.png")
     meta(name="viewport" content="width=device-width, initial-scale=1")
+
   body
     block header
       header.top

@@ -1,0 +1,47 @@
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.svg-content {
+    display: block;
+    margin: 0 auto;
+    min-width: 530px;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #fff;
+}
+
+.axis text {
+    font-size: 13px;
+}
+
+.bar {
+    fill: #8CD3DD;
+}
+
+.bar:hover {
+    fill: #F56C4E;
+}
+
+
+svg text.label {
+    fill: white;
+    font: 15px;
+    font-weight: 400;
+    text-anchor: middle;
+    &__id{
+        fill:black;
+    }
+
+}
+
+
+

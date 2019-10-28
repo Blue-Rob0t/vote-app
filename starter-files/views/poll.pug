@@ -1,0 +1,30 @@
+extends layout
+
+block content
+
+    //- TODO:
+        createschema
+        create form
+        client/server side error validation
+        add additional form options on user rqst
+        create tags for search purposes for users to find things to vote on
+        link to schema
+
+    .inner
+        form.form.poll-form(post='/poll/:id/link' method='POST')
+        
+
+            h2 Name your poll
+            
+            label(for='name') Poll Name 
+            input.input(type='text', name='name')
+                
+         
+         
+            button.button.poll-button(type='button') Add more
+
+
+
+            input.input(type='submit' value='submit')
+
+

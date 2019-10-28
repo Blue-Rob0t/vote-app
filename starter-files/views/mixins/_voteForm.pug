@@ -1,0 +1,28 @@
+mixin voteForm()
+    h1= vote.name
+
+    .inner
+        form.form(action=`` method="POST")
+            each v in vote.options
+                label(for='voteChoice') #{v}
+                input(type='radio', name=`choice`, value=`${v}`)
+
+        
+            input.button(type='submit' value='submit')
+
+            //- TODO: create model for vote page + store data
+                      create graph for page
+                      track votes? 
+                      
+
+    pre= h.dump(vote)
+
+
+//-     {
+//-   "_id": "5b0ee71a8878032f4060c330",
+//-   "name": "adf",
+//-   "__v": 0,
+//-   "options": [
+//-     "adf"
+//-   ]
+//- }

@@ -1,0 +1,27 @@
+extends layout
+
+block content
+
+    h2 polls 
+    
+    ul
+    
+        each p in pollList
+            - let name = '/${p.name}'
+            li
+                a(class='button' href=link+"/poll") #{p.name}
+
+        //- create link 
+
+
+
+    pre= h.dump(link) 
+
+
+//- import data to page
+//- have html template set up to take data 
+//- create a card that will display data interatively
+//- create logic that will loop through data and display cards
+//- limit number of cards to be displayed
+//- cycle through cards
+
